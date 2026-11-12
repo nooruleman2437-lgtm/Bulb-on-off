@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Light Program</title>
+</head>
+<style>
+    body{
+        background: #111;
+        color: white;
+        text-align: center;
+        padding-top: 40px;
+    }
+    h1{
+        color: yellow;
+    }
+    #bulb{
+        font-size: 180px;
+        margin: 30px;
+        transition: 0.3s;
+    }
+    .glow{
+        filter: drop-shadow(0 0 30px yellow)
+        drop-shadow(0 0 60px orange);
+        transform:scale(1.1);
+    }
+    button{
+        padding: 15px;
+        font-size: 20px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        margin: 10px;
+    }
+    .on{
+        background-color: green;
+        color: white;
+    }
+    .off{
+        background-color: red;
+        color: white;
+    }
+</style>
+<body>
+    <h1>💡 MY LIGHT BULB 💡</h1>
+    <div id="bulb">💡</div>
+    <h2 id="status"> LIGHT IS OFF</h2>
+    <button class="on" onclick="turnOn()">TURN ON</button>
+    <button class="off" onclick="turnOff()">TURN Off</button>
+    <script>
+        function turnOn(){
+            let bulb = document.getElementById("bulb");
+            bulb.classList.add("glow");
+            document.body.style.backgroundColor="#443500";
+            document.getElementById("status").innerText="LIGHT IS ON";
+        }
+
+
+        function turnOff(){
+            let bulb = document.getElementById("bulb");
+            bulb.classList.remove("glow");
+            document.body.style.backgroundColor="#111";
+            document.getElementById("status").innerText="LIGHT IS OFF";
+        }
+    </script>
+</body>
+</html>
